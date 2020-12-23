@@ -15,7 +15,7 @@ package src;
  */
 class AntFileFormatter {
     /**
-     *
+     * Make an XML comment.
      * @param comment The text of the comment.
      * @return A string containing the comment text formatted
      *         as an XML comment.
@@ -25,11 +25,11 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make an Ant property.
      * @param name The name of the property to be formatted.
      * @param location The location that the property points to.
      * @return String containing an ant property element with the
-     *         specified name and location
+     *         specified name and location.
      */
     public static String antProperty(String name, String location) {
         return String.format(
@@ -40,7 +40,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make the opening tag of an Ant property.
      * @param targetName
      * @return String containing the opening tag of the specified target.
      */
@@ -49,7 +49,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make the opening tag of an Ant property with dependencies.
      * @param targetName
      * @param depends The targets that this target depends on, formatted
      *                as a comma-separated list.
@@ -65,7 +65,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make an Ant delete task.
      * @param dirName The name of the directory to be deleted. This can
      *                be a property name enclosed in ${}.
      * @return String containing an ant delete task for the specified
@@ -76,7 +76,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make an Ant mkdir task.
      * @param dirName The name of the directory to be created. This can
      *                be a property name enclosed in ${}.
      * @return String containing an ant mkdir task for the specified
@@ -87,7 +87,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make the opening tag of an Ant javac task.
      * @param debug Boolean indicating whether or not the compiler
      *              should include debug information, like file lines
      *              in stacktraces.
@@ -103,7 +103,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make the opening tag of an Ant jar task.
      * @param jarName What the jar file will be called. Must include
      *                file extension.
      * @return String containing the opening tag of an Ant jar task,
@@ -117,7 +117,7 @@ class AntFileFormatter {
     }
 
     /**
-     *
+     * Make the closing tag of any element.
      * @param tagName The element that is being closed.
      * @return String containing the closing tag of the specified
      *         element.
