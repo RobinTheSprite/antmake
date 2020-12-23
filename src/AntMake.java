@@ -1,7 +1,7 @@
-/*
+/**
  *
  * AntMake.java
- * Mark Underwood
+ * @author Mark Underwood
  * https://github.com/RobinTheSprite
  * 12/21/2020
  *
@@ -13,6 +13,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Main file.
+ * Prompts the user with some options, which are used
+ * to generate a simple build script.
+ */
 public class AntMake {
 
     public static void main(String[] args) {
@@ -20,6 +25,8 @@ public class AntMake {
         System.out.println("Generating build script...");
 
         Scanner input = new Scanner(System.in);
+
+        //Get all of the options
 
         System.out.print("Project name: ");
         String projectName = input.nextLine();
@@ -47,6 +54,8 @@ public class AntMake {
             }
             manifest.addHeader(name, value);
         }
+
+        //Start writing the string that will become the file
 
         FileString file = new FileString(4);
         file.writeLine("<?xml version=\"1.0\"?>");
@@ -152,6 +161,7 @@ public class AntMake {
 
         input.close();
 
+        //Write the string out to file.
         try(FileWriter writer = new FileWriter("build.xml")) {
             writer.write(file.getFile());
         } catch (IOException e) {
