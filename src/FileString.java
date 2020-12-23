@@ -18,16 +18,16 @@ public class FileString {
     private String tab = new String();
 
     /**
-     *
-     * @param tabSize How many spaces to put in one tab
+     * Create a new FileString with the given tab size.
+     * @param tabSize How many spaces to put in one tab.
      */
     public FileString(int tabSize) {
         setTabSize(tabSize);
     }
 
     /**
-     *
-     * @param size How many spaces to put in one tab
+     * Increase or decrease the number of spaces in one tab.
+     * @param size How many total spaces to put in one tab.
      */
     public void setTabSize(int size) {
         tab = "";
@@ -37,7 +37,8 @@ public class FileString {
     }
 
     /**
-     *
+     * Increase or deacrease the indentation level. The next line
+     * written will have the given number of tabs prepended.
      * @param depth How many tab levels to append to the beginning
      *              of each line.
      */
@@ -53,7 +54,7 @@ public class FileString {
     }
 
     /**
-     *
+     * Write some amount of text, followed by a newline.
      * @param line The text to be written to the line
      */
     public void writeLine(String line) {
@@ -65,7 +66,7 @@ public class FileString {
     }
 
     /**
-     *
+     * Write some text to the file.
      * @param str The text to be written.
      */
     public void write(String str) {
@@ -73,7 +74,8 @@ public class FileString {
     }
 
     /**
-     *
+     * Get the file, for the purpose of writing it to the screen,
+     * or for writing it to disk.
      * @return String containing the entire text of the file.
      */
     public String getFile() {
